@@ -8,6 +8,7 @@ class ServiceListView(ListView):
     template_name = 'service/service_list.html'
 
 
+
 class ServiceDetailView(DetailView):
     model = Service
     template_name = 'service/service_detail.html'
