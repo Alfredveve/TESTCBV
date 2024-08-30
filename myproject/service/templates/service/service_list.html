@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+{% block section %}
+<div class="container mt-4">
+    <h1 class="mb-4">Liste des Services</h1>
+    <div class="row">
+        {% for service in object_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.description }}</p>
+                    <p class="card-text"><strong>Prix:</strong> {{ service.price }}</p>
+                    <a href="{% url 'service_detail' service.pk %}" class="btn btn-primary">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
