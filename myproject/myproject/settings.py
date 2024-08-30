@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-     'home',
+    'home',
     'formation',
     'service',
     'contact',
