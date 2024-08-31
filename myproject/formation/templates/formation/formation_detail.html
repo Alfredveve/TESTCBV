@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+
+{% block section %}
+  <div class="container mt-5">
+    <h1>{{ formation.title }}</h1>
+    <p>{{ formation.description }}</p>
+    <p>Prix : {{ formation.price }}</p>
+    <p>Certifié par : {{ formation.certifier }}</p>
+    <a href="{% url 'formation_list'%}" class="btn btn-warning">Retour</a>
+  </div>
+{% endblock %}
