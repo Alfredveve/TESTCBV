@@ -18,11 +18,17 @@ class ServiceCreateView(CreateView):
     template_name = 'service/service_form.html'
     fields = ['title', 'description', 'price', 'image']
 
+    def get_success_url(self):
+        return reverse_lazy('service_detail', kwargs={'pk': self.object.pk})
+
 
 class ServiceUpdateView(UpdateView):
     model = Service
     template_name = 'service/service_form.html'
     fields = ['title', 'description', 'price', 'image']
+
+    def get_success_url(self):
+        return reverse_lazy('service_detail', kwargs={'pk': self.object.pk})
 
 
 class ServiceDeleteView(DeleteView):
